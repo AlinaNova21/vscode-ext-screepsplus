@@ -1,0 +1,72 @@
+{
+	"name": "screepsplus",
+	"displayName": "screepsplus",
+	"description": "Tools for the game Screeps",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:screepsplus.viewSegment",
+		"onView:serversView"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "screepsplus.viewSegment",
+				"title": "Screepsplus: View Segment"
+			},
+			{
+				"command": "screepsplus.viewMemory",
+				"title": "Screepsplus: View Memory"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "screepsplus",
+					"title": "ScreepsPlus",
+					"icon": "media/icon.png"
+				}
+			]
+		},
+		"views": {
+			"screepsplus": [
+				{
+					"id": "serversView",
+					"name": "Servers"
+				},
+				{
+					"id": "package-dependencies",
+					"name": "Dependencies"
+				},
+				{
+					"id": "package-outline",
+					"name": "Outline"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.37.0",
+		"eslint": "^5.13.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.0.2"
+	},
+	"dependencies": {
+		"screeps-api": "^1.9.0",
+		"yamljs": "^0.3.0"
+	}
+}
